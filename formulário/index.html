@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link href="estilo.css" rel="stylesheet"/>
+    <script>
+        function calc_total() {
+            var qtd=parseInt(document.getElementById('cQtd').value)
+            tot= qtd * 1500;
+            document.getElementById('cTotal').value= tot;
+        }
+    </script>
+</head>
+<body>
+    
+    <form id="formulario"  method="post" oninput="calc_total();">
+        <fieldset id="dados"><legend>dados do usuário</legend>
+            <p><label value="cNome">nome:  <input type="text" name="tNome" id="cNome" size="26" maxlength="30" placeholder="Digite seu Nome"/></label></p>
+            <p><label value="cMail">e-mail:  <input type="email" name="tMail" id="cMail" size="25" maxlength="30" placeholder="Digite seu E-mail"/></label></p>
+            <p><label value="cTel">nº de tel.(whattsapp):  <input type="tel" name="tTel" id="cTel" size="12" maxlength="
+                11" placeholder="(DDD) Número..."/></label></p>
+            <p><label value="cDat">data de nascimento:  <input type="date" name="tDat" id="cDat"/></label></p>
+            <fieldset id="genero"><legend>genêro</legend>
+                <p><label value="cMasc"><input type="radio" name="tGen" id="cMasc" checked/>  masculino</label></p>
+                <P><label value="cFem"><input type="radio" name="tGen" id="cFem"/>  feminino</label></P>
+            </fieldset>
+        </fieldset>
+
+        <fieldset id="endereco"><legend>endereço</legend>
+            <p><label value="cRua">rua:  <input type="text" name="tRua" id="cRua" size="21" maxlength="60" placeholder="Rua,Avenida,Travessa..."/></label></p>
+            <p><label value="cNum">número:  <input type="number" name="tNum" id="cNum" min="0" max="999999" placeholder="Nº, Apto.."/></label></p>
+            <p><label value="cEst"> estado:
+            <select name="tEst" id="cEst"> 
+                <option>Acre</option> <option>Alagoas</option> <option>Amapá</option> <option>Amazonas</option> <option>Bahia</option> <option>Ceará</option> 
+                <option>Distrito Federal</option> <option>Espírito Santo</option>  <option>Goiás</option>  <option>Maranhão</option>  <option>Mato Grosso</option> 
+                <option>Mato Grosso do Sul</option> <option>Minas Gerais</option> <option>Pará</option> <option>Paraíba</option> <option>Paraná</option> 
+                <option>Pernambuco</option> <option>Piauí</option> <option>Rio de Janeiro</option> <option>Rio Grande do Norte</option> <option>Rio Grande do Sul</option>  
+                <option>Rondônia</option> <option>Roraima</option> <option>Santa Catarina</option> <option>São Paulo</option> <option>Sergipe</option> <option>Tocantins</option>     
+            </select></label></p>
+            <p>cidade:  <input type="text" name="tCid" id="cCid" size="17" maxlength="45" placeholder="Sua cidade" list="cidade"/></p>
+            <datalist id="cidade">
+                <option value="Paloma"></option>
+                <option value="Guaraituba"></option>
+                <option value="Maria do Rosario"></option>
+                <option value="Maracanã"></option>
+                <option value="Rio verde"></option>
+                <option value="Guarani"></option>
+                <option value="Ana terra"></option>
+                <option value="Vila Zumbi"></option>
+            </datalist>
+        </fieldset>
+
+        <fieldset id="fale_conosco"><legend>fale conosco</legend>
+            <p><label value="cPromo"><input type="checkbox" name="tPromo" id="cPromo" checked/>   quero receber e-mails sobre novidades e promoções.</label></p>
+            <p><label value="cMsg">mensagem:  <textarea name="tMsg" id="cMsg" cols="25" rows="4" placeholder="Digite aqui suas dúvidas."></textarea></label></p>
+        </fieldset>
+
+        <fieldset id="cotacao"><legend>cotação</legend>
+            <p><label value="cQtd">quantidade:  <input type="number" name="tQtd" id="cQtd" min="0" max="50" placeholder="0"/></label></p>
+            <p><label value="cTotal">valor total:  <input type="text" name="tTotal" id="cTotal" placeholder="$$$$$" readonly/></label></p>
+            <p><label value="cWhat"><input type="checkbox" name="tWhat" id="cWhat" checked/>   autorizo a empresa a me contatar via whattsapp para conclusão de pedido.</label></p>
+        </fieldset>
+        <fieldset id="enviar">
+            <input type="submit" name="tEnv" id="cEnv"/>
+        </fieldset>
+
+    </form>
+</body>
+</html>
